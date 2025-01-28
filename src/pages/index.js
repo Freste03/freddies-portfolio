@@ -5,6 +5,7 @@ import get from 'lodash/get'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 import ArticlePreview from '../components/article-preview'
+import Navigation from '../components/navigation'
 
 class RootIndex extends React.Component {
   render() {
@@ -12,14 +13,15 @@ class RootIndex extends React.Component {
     const [author] = get(this, 'props.data.allContentfulPerson.nodes')
 
     return (
-      <Layout location={this.props.location}>
-        <Hero
-          image={author.heroImage.gatsbyImage}
-          title={author.name}
-          content={author.shortBio}
-        />
-        <ArticlePreview posts={posts} />
-      </Layout>
+      <div>
+        <Layout location={this.props.location}>
+          <Hero
+            image={author.image.gatsbyImage}
+            title={author.name}
+            content={author.shortBio}
+          />
+        </Layout>
+      </div>
     )
   }
 }
@@ -28,12 +30,11 @@ export default RootIndex
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allContentfulBlogPost(sort: { publishDate: DESC }) {
+    allContentfulBlogPost {
       nodes {
         title
         slug
-        publishDate(formatString: "MMMM Do, YYYY")
-        tags
+
         heroImage {
           gatsbyImage(
             layout: FULL_WIDTH
@@ -55,8 +56,7 @@ export const pageQuery = graphql`
         shortBio {
           raw
         }
-        title
-        heroImage: image {
+        image: image {
           gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 1180)
         }
       }

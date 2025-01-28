@@ -11,8 +11,20 @@ const NotFoundPage = () => (
         alignItems: 'center',
       }}
     >
-      <h1>404: Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <h1>Denna sida finns inte</h1>
+      <p>Tryck på knappen för att gå tillbaka</p>
+      <a
+        href="/"
+        style={{
+          marginTop: '1rem',
+          background: 'lightblue',
+          padding: '1rem',
+          borderRadius: '4px',
+          fontWeight: 'bold',
+        }}
+      >
+        Gå tillbaka
+      </a>
     </div>
   </Layout>
 )

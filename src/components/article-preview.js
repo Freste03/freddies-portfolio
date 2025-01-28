@@ -4,7 +4,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
 import Container from './container'
-import Tags from './tags'
+
 import * as styles from './article-preview.module.css'
 
 const ArticlePreview = ({ posts }) => {
@@ -23,10 +23,6 @@ const ArticlePreview = ({ posts }) => {
               </Link>
               <div>
                 {post.description?.raw && renderRichText(post.description)}
-              </div>
-              <div className={styles.meta}>
-                <small className="meta">{post.publishDate}</small>
-                <Tags tags={post.tags} />
               </div>
             </li>
           )
