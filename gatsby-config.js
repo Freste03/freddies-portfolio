@@ -20,5 +20,11 @@ module.exports = {
         host: process.env.CONTENTFUL_HOST,
       },
     },
+    {
+      resolve: 'gatsby-plugin-image',
+      options: {
+        formats: ['auto', 'jpg', 'png'], // disable WebP format
+      },
+    },
   ],
 }
