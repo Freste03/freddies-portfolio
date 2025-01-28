@@ -40,20 +40,6 @@
   gap: var(--space-md);
 }
 
-@media (max-width: 767px) {
-  .logoLink > span:last-child {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
-}
-
 .logo {
   height: var(--size-logo);
   width: var(--size-logo);
